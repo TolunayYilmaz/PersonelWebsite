@@ -1,16 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export default function Button({ iconName, buttonName,bgColor,textColor }) {
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+export default function Button({
+  iconName,
+  buttonName,
+  bgColor,
+  textColor,
+  borderColor,
+}) {
   return (
-    <>
-      
-        <div className={`border-[1px] h-[52px] w-[132px] flex items-center justify-center rounded-md gap-x-2 border-[#3730A3] bg-[${bgColor}]`}>
-             <FontAwesomeIcon
-            className="text-[#3730A3] text-2xl"
-            icon={iconName}
-          />
-          <button className={`text-[${textColor}] font-medium"`}>{buttonName}</button>
-        </div>
-      
-    </>
+    <Link
+      className={`h-[52px] w-[132px] flex items-center justify-center rounded-md gap-x-2 ${
+        borderColor ? `border-[1px] border-[${borderColor}]` : ""
+      }`}
+      style={{ backgroundColor: bgColor, color: textColor }}
+    >
+      {iconName && (
+        <FontAwesomeIcon className="text-[#3730A3] text-2xl" icon={iconName} />
+      )}
+      {buttonName}
+    </Link>
   );
 }
