@@ -1,5 +1,5 @@
 import { useState ,useContext} from 'react'
-import Summary from "./components/Summary"
+import Summary from "./components/summary"
 import './App.css'
 import HeadController from './components/HeadController'
 import TopBar from './components/Topbar'

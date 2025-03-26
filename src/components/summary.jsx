@@ -2,7 +2,7 @@ import photo from "../images/photo.jpg";
 import {faGithub, faLinkedinIn} from "@fortawesome/free-brands-svg-icons"
 import Button from "./Button.jsx";
 import { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeContext } from "../contexts/ThemeContext.jsx";
 
 export default function Summary() {
 
