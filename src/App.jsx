@@ -5,6 +5,9 @@ import HeadController from './components/HeadController'
 import TopBar from './components/Topbar'
 import Summary from './components/Summary'
 import Skills from './components/Skills'
+import Profile from './components/Profile'
+import ProjectList from './components/ProjectList'
+import Footer from "./components/Footer"
 
 function App() {
   
@@ -16,6 +19,9 @@ function App() {
       <TopBar/>
       <Summary/>
       <Skills/>
+      <Profile/>
+      <ProjectList/>
+      <Footer/>
 
     </div>
  
