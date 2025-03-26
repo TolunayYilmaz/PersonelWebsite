@@ -5,7 +5,8 @@ export default function Button({
   buttonName,
   bgColor,
   textColor,
-  borderColor,
+  borderColor
+
 }) {
   return (
     <Link
@@ -15,7 +16,7 @@ export default function Button({
       style={{ backgroundColor: bgColor, color: textColor }}
     >
       {iconName && (
-        <FontAwesomeIcon className="text-[#3730A3] text-2xl" icon={iconName} />
+        <FontAwesomeIcon className={`text-[${textColor}]  text-2xl`} icon={iconName} />
       )}
       {buttonName}
     </Link>
