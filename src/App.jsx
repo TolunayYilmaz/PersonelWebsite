@@ -1,5 +1,5 @@
 import { useState ,useContext} from 'react'
-import Summary from './components/Summary'
+import Summary from "./components/Summary"
 import './App.css'
 import HeadController from './components/HeadController'
 import TopBar from './components/Topbar'
@@ -16,11 +16,11 @@ function App() {
     <div className={`flex flex-col justify-between gap-12 ${theme==="dark"?"bg-[#252128]":"bg-white"}`}>
     <HeadController/>
     <TopBar/>
-    <Summary></Summary>
-    <Skills></Skills>
+    <Summary/>
+    <Skills/>
     <Profile/>
     <ProjectList/>
-    <Footer></Footer>
+    <Footer/>
     </div>
  
   
