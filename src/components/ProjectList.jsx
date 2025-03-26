@@ -28,8 +28,8 @@ export default function ProjectList(){
          <Container>
             <h1 className={`text-5xl mb-20 ml-2 ${theme==="dark"?"text-[#AEBCCF]":"text-black"}`}>Projects</h1>
             <Carousel itemCountPerPanel={3} customMode carouselId={"carousel1"}>
-              {sampleArray.map((el) => (
-              <Project></Project>
+              {sampleArray.map((el,index) => (
+              <Project key={index}></Project>
               ))}
             </Carousel>
             <ControllerBox>

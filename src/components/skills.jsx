@@ -33,8 +33,8 @@ export default function Skills() {
     <Container>
     <h1 className={`text-5xl mb-10 ml-2 ${theme==="dark"?"text-[#AEBCCF]":"text-black"}`}>Skills</h1>
     <Carousel itemCountPerPanel={3} customMode carouselId={"carousel2"}>
-      {sampleArray.map((el) => (
-       <ItemSkill/>
+      {sampleArray.map((el,index) => (
+       <ItemSkill key={index}/>
       ))}
     </Carousel>
     <ControllerBox>
