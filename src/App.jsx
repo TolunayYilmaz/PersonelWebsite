@@ -1,10 +1,8 @@
 import { useState ,useContext} from 'react'
-import Summary from "./components/summary"
+
 import './App.css'
-import HeadController from './components/HeadController'
-import TopBar from './components/Topbar'
-import Skills from './components/Skills'
-import Profile from './components/Profile'
+
+
 import ProjectList from './components/ProjectList'
 import Footer from './components/Footer'
 import { ThemeContext } from './contexts/ThemeContext'
@@ -14,13 +12,8 @@ function App() {
   return (
     
     <div className={`flex flex-col justify-between gap-12 ${theme==="dark"?"bg-[#252128]":"bg-white"}`}>
-    <HeadController/>
-    <TopBar/>
-    <Summary/>
-    <Skills/>
-    <Profile/>
-    <ProjectList/>
-    <Footer/>
+
+
     </div>
  
   
