@@ -1,7 +1,7 @@
 import photo from "../images/photo.jpg"
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
-export default function Project(){
+export default function Project({projectName,projectDescription}){
 
   const {theme} =useContext(ThemeContext);
     return(
@@ -10,9 +10,9 @@ export default function Project(){
       
       {theme==="dark"?(<>
         <div >
-          <div className=" py-2 font-medium text-[#CFCBFF] text-3xl mb-2">Workintech</div>
+          <div className=" py-2 font-medium text-[#CFCBFF] text-3xl mb-2">{projectName}</div>
           <p className="text-white  text-sm">
-          A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.
+        {projectDescription}
           </p>
         </div>
         <div className="pt-4 pb-2 flex gap-3">
@@ -29,9 +29,9 @@ export default function Project(){
       </>):(<>
       
         <div >
-          <div className=" py-2 font-medium text-[#3730A3] text-3xl mb-2">Workintech</div>
+          <div className=" py-2 font-medium text-[#3730A3] text-3xl mb-2">{projectName}</div>
           <p className="text-[#6B7280]  text-sm">
-          A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.
+          {projectDescription}
           </p>
         </div>
         <div className="pt-4 pb-2 flex gap-3">

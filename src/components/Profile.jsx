@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import profileData from "../data";
 
 export default function Profile() {
   const{theme} =useContext(ThemeContext);
@@ -33,13 +34,10 @@ export default function Profile() {
           <h2 className="text-3xl text-[#B7AAFF] mb-5 mt-6">About Me</h2>
           <div className="flex flex-col gap-4">
           <p className="text-lg text-[#FFFFFF] font-normal">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
-            aut, odit laborum aliquam voluptatum nisi mollitia. 
+            {profileData.summary}
           
           </p>
-          <p className="text-lg text-[#FFFFFF] font-normal">  Mnima accusamus
-            ratione soluta aperiam sit voluptate? Dicta quod deserunt quam
-            temporibus cumque magnam!</p>
+          <p className="text-lg text-[#FFFFFF] font-normal"></p>
           </div>
   
         </div>
@@ -73,13 +71,10 @@ export default function Profile() {
           <h2 className="text-3xl text-[#4338CA] mb-5 mt-6">About Me</h2>
           <div className="flex flex-col gap-4">
           <p className="text-lg text-[#6B7280] font-normal">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
-            aut, odit laborum aliquam voluptatum nisi mollitia. 
+          {profileData.summary}
           
           </p>
-          <p className="text-lg text-[#6B7280] font-normal">  Mnima accusamus
-            ratione soluta aperiam sit voluptate? Dicta quod deserunt quam
-            temporibus cumque magnam!</p>
+          <p className="text-lg text-[#6B7280] font-normal"> </p>
           </div>
   
         </div>

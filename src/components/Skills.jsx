@@ -3,7 +3,8 @@ import React, { useContext,useEffect,useState } from "react";
 import Carousel, { Controller } from "@jjunyjjuny/react-carousel";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { useWindow } from "../hooks/useWindow";
-const sampleArray = [1, 2, 3, 4, 6, 7, 8];
+import profileData from "../data";
+
 
 export default function Skills() {
   const { theme } = useContext(ThemeContext);
@@ -26,8 +27,8 @@ export default function Skills() {
           carouselId={"carousel2"}
           
         >
-          {sampleArray.map((el, index) => (
-            <ItemSkill key={index} />
+          {profileData.skills.map((item, index) => (
+            <ItemSkill skillHead={item.name} skill={item.description} key={index} />
           ))}
         </Carousel>
 

@@ -3,6 +3,7 @@ import {faGithub, faLinkedinIn} from "@fortawesome/free-brands-svg-icons"
 import Button from "./Button.jsx";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext.jsx";
+import profileData from "../data.js";
 
 export default function Summary() {
 
@@ -16,7 +17,7 @@ export default function Summary() {
     <div className="flex items-center">
       <div className={`border-b-[1px] w-[102px] border-solid ${theme === "dark" ? "border-[#BAB2E7]" : "border-[#3730A3]"}`}></div>
       <p className={`ml-3 text-lg md:text-xl font-medium ${theme === "dark" ? "text-[#BAB2E7]" : "text-[#3730A3]"}`}>
-        Tolunay Yılmaz
+        {profileData.name}
       </p>
     </div>
 
@@ -27,8 +28,7 @@ export default function Summary() {
 
     
     <p className={`text-sm md:text-base ${theme === "dark" ? "text-white" : "text-black"}`}>
-      Hi, I’m Tolunay. I’m a full-stack developer. If you are looking for a
-      Developer who crafts solid and scalable frontend products with great user experiences, let’s shake hands.
+     {profileData.about}
     </p>
 
   

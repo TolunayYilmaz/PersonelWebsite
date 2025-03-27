@@ -1,13 +1,12 @@
 import Project from "./Project"
 import React from "react";
-import styled from "styled-components";
 import Carousel, { Controller } from "@jjunyjjuny/react-carousel";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { useWindow } from "../hooks/useWindow";
+import profileData from "../data";
 
 
-const sampleArray = [1, 2, 3, 4, 6, 7, 8];
 export default function ProjectList(){
   const{itemsPerPanel}=useWindow();
 
@@ -17,8 +16,8 @@ export default function ProjectList(){
             <h1 className={`text-5xl mb-20 ml-2 ${theme==="dark"?"text-[#AEBCCF]":"text-black"}`}>Projects</h1>
        
         <Carousel itemCountPerPanel={itemsPerPanel} customMode carouselId={"carousel1"}>
-              {sampleArray.map((el,index) => (
-              <Project key={index}></Project>
+              {profileData.projects.map((item,index) => (
+              <Project projectName={item.name} projectDescription={item.description} key={index}></Project>
               ))}
             </Carousel>
        
