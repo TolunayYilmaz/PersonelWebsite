@@ -14,7 +14,7 @@ function App() {
  const{theme}=useContext(ThemeContext)
   return (
     
-    <div className={`flex flex-col justify-between gap-12 ${theme==="dark"?"bg-[#252128]":"bg-white"}`}>
+    <div className={`flex overflow-x-hidden flex-col justify-between gap-12 ${theme==="dark"?"bg-[#252128]":"bg-white"}`}>
       <HeadController/>
       <TopBar/>
       <Summary/>

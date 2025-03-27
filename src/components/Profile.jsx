@@ -4,12 +4,12 @@ import { ThemeContext } from "../contexts/ThemeContext";
 export default function Profile() {
   const{theme} =useContext(ThemeContext);
   return (
-    <div className="w-7/12 mx-auto border-t border-b border-[#BAB2E7] py-6">
+    <div className="w-[80%]  border-t border-b border-[#BAB2E7] py-6 md:w-7/12 mx-auto ">
       {
         theme==="dark"?(<>
-        <h1 className="text-5xl font-semibold text-[#AEBCCF]">Profile</h1>
-      <div className="flex gap-14">
-        <div className=" w-2/5">
+          <h1 className="text-5xl font-semibold text-[#AEBCCF]">Profile</h1>
+      <div className="flex flex-col md:flex-row gap-14">
+        <div className="w-full md:w-2/5">
           <h2 className="text-3xl text-[#B7AAFF] mb-5 mt-6">Profile</h2>
           <div className="flex">
             <div className="w-40 flex flex-col gap-2">
@@ -25,10 +25,11 @@ export default function Profile() {
                 Tekirdağ Namı Kemal Ünv. Endüstri Müh., 2021
               </p>
               <p className="font-normal text-[#FFFFFF]">Frontend , Backend and Fullstack</p>
-            </div>
+          
           </div>
-        </div>
-        <div className=" w-3/5">
+        </div> </div>
+
+        <div className="w-full md:w-3/5">
           <h2 className="text-3xl text-[#B7AAFF] mb-5 mt-6">About Me</h2>
           <div className="flex flex-col gap-4">
           <p className="text-lg text-[#FFFFFF] font-normal">
@@ -48,11 +49,11 @@ export default function Profile() {
         
         </>):(<>
           <h1 className="text-5xl font-semibold">Profile</h1>
-      <div className="flex gap-14">
-        <div className=" w-2/5">
+      <div className="flex flex-col md:flex-row gap-14">
+        <div className="w-full  md:w-2/5">
           <h2 className="text-3xl text-[#4338CA] mb-5 mt-6">Profile</h2>
-          <div className="flex">
-            <div className="w-40 flex flex-col gap-2">
+          <div className="flex ">
+            <div className="w-40 flex flex-col gap-2 ">
               <p className="text-lg font-semibold">Doğum Tarihi</p>
               <p className="text-lg font-semibold">İkamet Şehri</p>
               <p className="text-lg font-semibold">Eğitim Durumu</p>
@@ -68,7 +69,7 @@ export default function Profile() {
             </div>
           </div>
         </div>
-        <div className=" w-3/5">
+        <div className="w-full md:w-3/5">
           <h2 className="text-3xl text-[#4338CA] mb-5 mt-6">About Me</h2>
           <div className="flex flex-col gap-4">
           <p className="text-lg text-[#6B7280] font-normal">
