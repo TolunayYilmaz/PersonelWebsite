@@ -13,7 +13,7 @@ export default function TopBar() {
         </span>
       </div>
       <div
-        className="flex gap-2"
+        className="flex flex-col justify-between  md:flex-row gap-2"
       >
         <Button textColor={"#6B7280"} buttonName={"Skills"} />
         <Button textColor={"#6B7280"} buttonName={"Projects"} />
