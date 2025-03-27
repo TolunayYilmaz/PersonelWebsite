@@ -10,7 +10,7 @@ export default function Project({projectName,projectDescription}){
       
       {theme==="dark"?(<>
         <div >
-          <div className=" py-2 font-medium text-[#CFCBFF] text-3xl mb-2">{projectName}</div>
+          <div className="text-2xl py-2 font-medium text-[#CFCBFF] md:text-3xl mb-2">{projectName}</div>
           <p className="text-white  text-sm">
         {projectDescription}
           </p>
@@ -29,7 +29,7 @@ export default function Project({projectName,projectDescription}){
       </>):(<>
       
         <div >
-          <div className=" py-2 font-medium text-[#3730A3] text-3xl mb-2">{projectName}</div>
+          <div className="text-2xl py-2 font-medium text-[#3730A3] md:text-3xl mb-2">{projectName}</div>
           <p className="text-[#6B7280]  text-sm">
           {projectDescription}
           </p>

@@ -14,7 +14,16 @@ export const useWindow = () => {
   const [itemsPerPanel, setItemsPerPanel] = useState(getItemsPerPanel);
 
   useEffect(() => {
-   setItemsPerPanel(getItemsPerPanel())
+    const handleResize = () => {
+      setItemsPerPanel(getItemsPerPanel());
+    };
+
+    window.addEventListener("resize", handleResize);
+
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return { itemsPerPanel };

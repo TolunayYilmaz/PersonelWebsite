@@ -14,9 +14,9 @@ export default function Skills() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full ml-11 mt-12 md:w-3/5  md:mt-24">
+      <div className="w-full ml-20 md:w-3/5  md:mt-24">
       
-        <h1 className={`text-3xl md:text-5xl mb-10 ml-2 ${theme === "dark" ? "text-[#AEBCCF]" : "text-black"}`}>
+        <h1 className={`text-3xl  mb-5 md:text-5xl md:mb-10 ml-2 ${theme === "dark" ? "text-[#AEBCCF]" : "text-black"}`}>
           Skills
         </h1>
 
@@ -25,7 +25,7 @@ export default function Skills() {
           itemCountPerPanel={itemsPerPanel}  
           customMode 
           carouselId={"carousel2"}
-          
+       
         >
           {profileData.skills.map((item, index) => (
             <ItemSkill skillHead={item.name} skill={item.description} key={index} />
@@ -34,10 +34,10 @@ export default function Skills() {
 
    
         <div className="flex mr-24 md: justify-center mt-5 gap-4">
-          <div className="hover:cursor-pointer">
+          <div className={`hover:cursor-pointer ${theme==="dark"?"text-white":"text-black"}`}>
             <Controller prev carouselId={"carousel2"} />
           </div>
-          <div className="hover:cursor-pointer">
+          <div className={`hover:cursor-pointer ${theme==="dark"?"text-white":"text-black"}`}>
             <Controller next carouselId={"carousel2"} />
           </div>
         </div>
