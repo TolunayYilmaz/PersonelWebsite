@@ -54,6 +54,7 @@ export default function Summary() {
               buttonName={"Hire Me"}
               bgColor={theme === "dark" ? "#E1E1FF" : "#3730A3"}
               borderColor={"#3730A3"}
+              location={"profile"}
             />
             <Button
               borderColor={theme === "dark" ? "#BAB2E7" : "#3730A3"}

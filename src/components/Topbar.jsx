@@ -2,7 +2,10 @@ import Button from "./Button.jsx";
 import {useContext} from "react"
 import { ThemeContext } from "../contexts/ThemeContext.jsx";
 
+
 export default function TopBar() {
+
+
 
   const {theme}=useContext(ThemeContext)
   return (
@@ -15,13 +18,14 @@ export default function TopBar() {
       <div
         className="flex flex-col justify-between  md:flex-row gap-2"
       >
-        <Button textColor={"#6B7280"} buttonName={"Skills"} />
-        <Button textColor={"#6B7280"} buttonName={"Projects"} />
+        <Button textColor={"#6B7280"} buttonName={"Skills"} location={"skills"}/>
+        <Button textColor={"#6B7280"} buttonName={"Projects"} location={"projects"} />
         <Button
           textColor={"#3730A3"}
           buttonName={"Hire Me"}
           borderColor={"#3730A3"}
           bgColor={"white"}
+          location={"profile"}
         />
       </div>
     </div>

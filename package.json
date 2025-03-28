@@ -23,6 +23,7 @@
     "react-carousel": "^4.3.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^5.3.4",
+    "react-scroll": "^1.9.3",
     "react-styled-carousel": "^0.5.1"
   },
   "devDependencies": {

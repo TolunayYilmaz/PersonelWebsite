@@ -1,4 +1,4 @@
-import {  useContext } from "react";
+import { useContext } from "react";
 import "./App.css";
 import { ThemeContext } from "./contexts/ThemeContext";
 import HeadController from "./components/HeadController";
@@ -8,12 +8,7 @@ import Skills from "./components/Skills";
 import Profile from "./components/Profile";
 import ProjectList from "./components/ProjectList";
 import Footer from "./components/Footer";
-
-
-
-
-
-
+import { Element } from "react-scroll";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -27,11 +22,19 @@ function App() {
       <HeadController />
       <TopBar />
       <Summary />
-      <Skills />
-      <Profile />
-      <ProjectList />
-      <Footer />
 
+      <Element name="skills">
+        <Skills />
+      </Element>
+
+      <Element name="profile">
+        <Profile />
+      </Element>
+      <Element name="projects">
+        <ProjectList />
+      </Element>
+
+      <Footer />
     </div>
   );
 }
