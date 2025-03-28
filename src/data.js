@@ -10,6 +10,7 @@ const profileData = {
       drivingLicense: "Class B",
       location: "Istanbul, Turkey",
     },
+   
     about:"Hi, I’m Tolunay. I’m a full-stack developer. If you are looking for a Developer who crafts solid and scalable frontend products with great user experiences, let’s shake hands.",
     summary: "Software Developer with 600 hours of training, including 400 hours in C# and SQL for application development and 200 hours in Unity Game Engine. Skilled in algorithms and problem-solving, developed through game projects. Currently advancing in ASP.NET Core Web API and RESTful services. Ready to contribute to innovative projects and grow in software development.",
     skills: [

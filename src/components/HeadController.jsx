@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { LanguageContext } from "../contexts/LanguageContext";
 
 export default function HeadController() {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const { language,toggleLanguage} = useContext(LanguageContext);
   
  
   const isDarkMode = theme === "dark";
-
+   const isLang=language==="tr";
   return (
     <div className="w-fit mt-10  sm:w-7/12 mx-auto mt-3 flex gap-3 justify-end">
       <label className="flex cursor-pointer select-none items-center">
@@ -52,7 +54,7 @@ export default function HeadController() {
 
 
       <div className="text-[15px] font-bold text-[#777777]">
-        {isDarkMode ?"DARK" : "LIGHT"} MODE | <span className="text-[#3730A3]">TÜRKÇE</span>'YE GEÇ
+        {isDarkMode ?"DARK" : "LIGHT"} MODE | <span onClick={toggleLanguage} className="text-[#3730A3] hover:cursor-pointer hover:shadow-md hover:shadow-gray">{isLang?"TÜRKÇE":"ENGLISH"}</span>'YE GEÇ
       </div>
     </div>
   );
