@@ -32,7 +32,7 @@ export default function ProjectList() {
           <Project
             projectName={item.name}
             projectDescription={item.description}
-            key={index}
+            src={`${index}.png`}
           ></Project>
         ))}
       </Carousel>
