@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import {  useContext } from "react";
 import "./App.css";
 import { ThemeContext } from "./contexts/ThemeContext";
 import HeadController from "./components/HeadController";
@@ -8,8 +8,7 @@ import Skills from "./components/Skills";
 import Profile from "./components/Profile";
 import ProjectList from "./components/ProjectList";
 import Footer from "./components/Footer";
-import {LanguageContext} from "./contexts/LanguageContext"
-import { useProfile } from "./services/queries";
+
 
 
 
@@ -18,13 +17,6 @@ import { useProfile } from "./services/queries";
 
 function App() {
   const { theme } = useContext(ThemeContext);
-  const { getData } = useContext(LanguageContext);
-  const { data } =useProfile(getData());
-
-
-   
-
-
 
   return (
     <div
@@ -39,7 +31,7 @@ function App() {
       <Profile />
       <ProjectList />
       <Footer />
-      <div>{data?.title}</div>
+
     </div>
   );
 }

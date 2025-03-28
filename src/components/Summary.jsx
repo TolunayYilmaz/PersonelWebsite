@@ -3,10 +3,14 @@ import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import Button from "./Button.jsx";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext.jsx";
-import profileData from "../data.js";
+import {LanguageContext} from "../contexts/LanguageContext"
+import { useProfile } from "../services/queries";
 
 export default function Summary() {
   const { theme } = useContext(ThemeContext);
+  const { getData } = useContext(LanguageContext);
+   const { data } =useProfile(getData());
+  
   return (
     <>
      <div className="flex items-center  h-0 m-0 p-0 md:mx-auto md:w-7/12 ">
@@ -20,7 +24,7 @@ export default function Summary() {
                 theme === "dark" ? "text-[#BAB2E7]" : "text-[#3730A3]"
               } `}
             >
-              {profileData.name}
+              {data?.name}
             </p>
       </div>
       <div className="w-[75%]  flex flex-col-reverse gap-5  md:gap-0 md:w-8/12 md:h-auto mx-auto  md:flex-row md:items-center md:justify-between md:px-4 ">
@@ -41,7 +45,7 @@ export default function Summary() {
               theme === "dark" ? "text-white" : "text-[#6B7280]"
             } md:w-[553px] md:h-auto`}
           >
-            {profileData.about}
+            {data?.about}
           </p>
 
           <div className="flex flex-wrap gap-2 md:gap-3">

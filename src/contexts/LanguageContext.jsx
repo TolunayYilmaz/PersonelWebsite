@@ -14,7 +14,12 @@ export function LanguageContextProvider({ children }) {
   };
   const getData=()=>{
    
-    return 2;
+    if(language==="tr"){
+      return 2;
+    }
+    else{
+      return 1;
+    }
 
   }
 

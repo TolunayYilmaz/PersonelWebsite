@@ -4,11 +4,11 @@ import { LanguageContext } from "../contexts/LanguageContext";
 
 export default function HeadController() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const { language,toggleLanguage} = useContext(LanguageContext);
-  
- 
+  const { language, toggleLanguage } = useContext(LanguageContext);
+
   const isDarkMode = theme === "dark";
-   const isLang=language==="tr";
+  const isLang = language === "tr";
+
   return (
     <div className="w-fit mt-10  sm:w-7/12 mx-auto mt-3 flex gap-3 justify-end">
       <label className="flex cursor-pointer select-none items-center">
@@ -20,20 +20,17 @@ export default function HeadController() {
             className="sr-only"
           />
 
-      
           <div
             className={`block h-[24px] w-[55px] rounded-full transition duration-300 ${
               isDarkMode ? "bg-[#3A3A3A]" : "bg-[#4731D3]"
             }`}
           ></div>
 
- 
           <div
             className={`dot absolute top-1/2 transform -translate-y-1/2 left-[5px] flex h-[16px] w-[16px] items-center justify-center rounded-full transition duration-500 ${
               isDarkMode ? "translate-x-[30px]" : ""
             }`}
           >
-      
             {isDarkMode && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,15 +43,22 @@ export default function HeadController() {
               </svg>
             )}
 
-
-            {!isDarkMode && <div className="h-4 w-4 rounded-full bg-[#FFE86E]"></div>}
+            {!isDarkMode && (
+              <div className="h-4 w-4 rounded-full bg-[#FFE86E]"></div>
+            )}
           </div>
         </div>
       </label>
 
-
       <div className="text-[15px] font-bold text-[#777777]">
-        {isDarkMode ?"DARK" : "LIGHT"} MODE | <span onClick={toggleLanguage} className="text-[#3730A3] hover:cursor-pointer hover:shadow-md hover:shadow-gray">{isLang?"TÜRKÇE":"ENGLISH"}</span>'YE GEÇ
+        {isDarkMode ? "DARK" : "LIGHT"} MODE |{" "}
+        <span
+          onClick={toggleLanguage}
+          className="text-[#3730A3] hover:cursor-pointer hover:shadow-md hover:shadow-gray"
+        >
+          {isLang ? "ENGLISH" : "TÜRKÇE"}
+        </span>
+        'YE GEÇ
       </div>
     </div>
   );

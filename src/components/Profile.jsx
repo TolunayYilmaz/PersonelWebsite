@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
-import profileData from "../data";
+
+import {LanguageContext} from "../contexts/LanguageContext"
+import { useProfile } from "../services/queries";
 
 export default function Profile() {
   const{theme} =useContext(ThemeContext);
+  const { getData } = useContext(LanguageContext);
+  const { data, isPending } = useProfile(getData());
   return (
     <div className="w-[80%]  border-t border-b border-[#BAB2E7] py-6 md:w-7/12 mx-auto ">
       {
@@ -31,7 +35,7 @@ export default function Profile() {
         <div className="w-full md:w-3/5">
           <h2 className="text-2xl md:text-3xl text-[#B7AAFF] mb-5 mt-6">About Me</h2>
           <div className="flex flex-col gap-4">
-            <p className="text-sm md:text-lg text-[#FFFFFF] font-normal">{profileData.summary}</p>
+            <p className="text-sm md:text-lg text-[#FFFFFF] font-normal">{data?.summary}</p>
           </div>
         </div>
       </div>
@@ -63,7 +67,7 @@ export default function Profile() {
           <h2 className="text-2xl md:text-3xl text-[#4338CA] mb-5 mt-6">About Me</h2>
           <div className="flex flex-col gap-4">
           <p className="text-sm md:text-lg text-[#6B7280] font-normal">
-          {profileData.summary}
+          {data?.summary}
           
           </p>
           <p className="text-lg text-[#6B7280] font-normal"> </p>
