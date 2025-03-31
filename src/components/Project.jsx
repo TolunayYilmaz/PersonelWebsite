@@ -6,12 +6,17 @@ export default function Project({
   projectDescription,
   src,
   techs,
+  viewSite,
+  gitHubLink
 }) {
   const { theme } = useContext(ThemeContext);
-
+  const goTo = (value) => {
+    window.location.href = value;
+  };
+  
 
   return (
-    <div className="w-[300px] h-[450px] sm:h-[550px] rounded overflow-hidden ml-5 mr-32">
+    <div className="w-[300px] h-[450px] sm:h-[460px] rounded overflow-hidden ml-5 mr-32 flex flex-col justify-between">
       <img
         className="w-full h-44 object-fill"
         src={src}
@@ -20,7 +25,7 @@ export default function Project({
 
       {theme === "dark" ? (
         <>
-          <div>
+          <div >
             <div className="text-2xl py-2 font-medium text-[#CFCBFF] md:text-3xl mb-2">
               {projectName}
             </div>
@@ -38,12 +43,12 @@ export default function Project({
             </span>
           </div>
           <div className="flex justify-between mt-5">
-            <p className="border-b-2 border-[#E1E1FF]  text-[#E1E1FF] text-base">
+            <p className="border-b-2 border-[#E1E1FF]  text-[#E1E1FF] text-base hover:cursor-pointer" onClick={()=>goTo(gitHubLink)} >
               Github
             </p>
-            <p className="border-b-2 border-[#E1E1FF] text-[#E1E1FF] text-base">
+           {viewSite&& <p className="border-b-2 border-[#E1E1FF] text-[#E1E1FF] text-base hover:cursor-pointer"  onClick={()=>goTo(viewSite)}>
               View Site
-            </p>
+            </p>}
           </div>
         </>
       ) : (
@@ -66,12 +71,12 @@ export default function Project({
             </span>
           </div>
           <div className="flex justify-between mt-5">
-            <p className="border-b-2 border-[#3730A3]  text-[#3730A3] text-base">
+            <p className="border-b-2 border-[#3730A3]  text-[#3730A3] text-base hover:cursor-pointer"  onClick={()=>goTo(gitHubLink)}>
               Github
             </p>
-            <p className="border-b-2 border-[#3730A3]  text-[#3730A3] text-base">
+            {viewSite&& <p className="border-b-2 border-[#3730A3]  text-[#3730A3] text-base hover:cursor-pointer" onClick={()=>goTo(viewSite)}>
               View Site
-            </p>
+            </p>}
           </div>
         </>
       )}

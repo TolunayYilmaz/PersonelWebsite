@@ -145,15 +145,15 @@ const dataEn= {
           name: "Academic Student Automation",
           tech: ["C#", "MSSQL", "Entity Framework", "WinForm"],
           description: "A desktop automation system for managing student records.",
-          githubLink: "GitHub Link",
-          siteLink:"Site Link"
+          githubLink: "https://github.com/TolunayYilmaz/StudentAcademicianApp",
+          siteLink:""
         },
         {
           name: "CV Web Application",
           tech: ["C#", "HTML", "MSSQL", "Entity Framework", "ASP.NET"],
           description: "A web application for users to create and store their resumes.",
-          githubLink: "GitHub Link",
-          siteLink:"Site Link"
+          githubLink: "https://github.com/TolunayYilmaz/DynamicCVWebApp",
+          siteLink:""
           
         },
         {
@@ -161,7 +161,7 @@ const dataEn= {
           tech: ["C#", "MSSQL", "Entity Framework", "WinForm"],
           description: "A restaurant order management system where users can place orders and track them.",
           githubLink: "GitHub Link",
-          siteLink:"Site Link"
+          siteLink:""
         },
         {
           name: "Pizza Project",
@@ -169,7 +169,39 @@ const dataEn= {
           description: "An online pizza ordering web application with a responsive design and user-friendly interface.",
           githubLink: "https://github.com/TolunayYilmaz/PizzaProject",
           siteLink: "https://radiant-gnome-ae802f.netlify.app/"
+        },
+        {
+          name: "MultiShop",
+          tech: [
+            "AspNet Core",
+            "Redis",
+            "Dapper",
+            "Docker",
+            "MongoDB",
+            "PostgreSQL",
+            "MSSQL",
+            "SQLite",
+            "Google Drive API",
+            "Identity Server",
+            "API Gateway",
+            "Ocelot",
+            "Postman",
+            "Swagger",
+            "Onion Architecture",
+            "CQRS",
+            "Mediator",
+            "Repository Pattern",
+            "JWT",
+            "Authentication",
+            "Authorization",
+            "SignalR",
+            "Ajax"
+          ],
+          description: "A comprehensive e-commerce platform built with a microservices architecture.",
+          githubLink: "https://github.com/TolunayYilmaz/MultiShop",
+          siteLink: ""
         }
+        
       ]
     
   

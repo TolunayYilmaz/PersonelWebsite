@@ -43,6 +43,8 @@ export default function ProjectList() {
                 projectDescription={item.description}
                 src={`${index}.png`}
                 techs={item.tech}
+                viewSite={item.siteLink}
+                gitHubLink={item.githubLink}
               
               ></Project>
             ))}

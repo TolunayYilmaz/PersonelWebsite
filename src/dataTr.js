@@ -145,22 +145,22 @@ const dataTr = {
       name: "Akademik Öğrenci Otomasyonu",
       tech: ["C#", "MSSQL", "Entity Framework", "WinForm"],
       description: "Öğrenci kayıtlarını yönetmek için geliştirilmiş bir masaüstü otomasyon sistemi.",
-      githubLink: "GitHub Linki",
-      siteLink: "Site Linki"
+      githubLink: "https://github.com/TolunayYilmaz/StudentAcademicianApp",
+      siteLink: ""
     },
     {
       name: "CV Web Uygulaması",
       tech: ["C#", "HTML", "MSSQL", "Entity Framework", "ASP.NET"],
       description: "Kullanıcıların özgeçmiş oluşturup saklayabileceği bir web uygulaması.",
-      githubLink: "GitHub Linki",
-      siteLink: "Site Linki"
+      githubLink: "https://github.com/TolunayYilmaz/DynamicCVWebApp",
+      siteLink: ""
     },
     {
       name: "Hamburger Sipariş Otomasyonu",
       tech: ["C#", "MSSQL", "Entity Framework", "WinForm"],
       description: "Restoran sipariş yönetim sistemi, kullanıcıların sipariş vermesine ve takip etmesine olanak tanır.",
-      githubLink: "GitHub Linki",
-      siteLink: "Site Linki"
+      githubLink: "https://github.com/TolunayYilmaz/BurgerAutomation",
+      siteLink: ""
     },
     {
       name: "Pizza Projesi",
@@ -168,6 +168,37 @@ const dataTr = {
       description: "Duyarlı tasarıma sahip, kullanıcı dostu bir çevrimiçi pizza sipariş web uygulaması.",
       githubLink: "https://github.com/TolunayYilmaz/PizzaProject",
       siteLink: "https://radiant-gnome-ae802f.netlify.app/"
+    },
+    {
+      name: "MultiShop",
+      tech: [
+        "AspNet Core",
+        "Redis",
+        "Dapper",
+        "Docker",
+        "MongoDB",
+        "PostgreSQL",
+        "MSSQL",
+        "SQLite",
+        "Google Drive API",
+        "Identity Server",
+        "API Gateway",
+        "Ocelot",
+        "Postman",
+        "Swagger",
+        "Onion Architecture",
+        "CQRS",
+        "Mediator",
+        "Repository Pattern",
+        "JWT",
+        "Authentication",
+        "Authorization",
+        "SignalR",
+        "Ajax"
+      ],
+      description: "Mikroservis mimarisi ile geliştirilmiş, geniş kapsamlı bir e-ticaret platformu.",
+      githubLink: "https://github.com/TolunayYilmaz/MultiShop",
+      siteLink: ""
     }
   ]
 };

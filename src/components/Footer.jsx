@@ -9,6 +9,9 @@ export default function Footer() {
   const {theme}=useContext(ThemeContext);
     const { getData } = useContext(LanguageContext);
     const { data, isPending } = useProfile(getData());
+    const goTo = (value) => {
+      window.location.href = value;
+    };
   return (
 <>
 {theme==="dark"?(<>
@@ -20,8 +23,8 @@ export default function Footer() {
         <p className="text-xl border-b-2 mr-4  border-[#BAB2E7] text-[#BAB2E7] inline-block  w-[280px] md:mr-0"><FontAwesomeIcon icon={faHandPointUp} rotation={90} style={{color: "#FFD43B",}} /> {data?.mail}</p>
         <div className="flex gap-4 mr-6 md:mr-0">
           <p className="text-lg text-[#E1E1FF]">{data?.title?.personelBlog}</p>
-          <p className="text-lg text-[#00AB6B]">Github</p>
-          <p className="text-lg text-[#0077B5]">Linkedin</p>
+          <p className="text-lg rounded-md text-[#00AB6B] borer hover:cursor-pointer hover:shadow-lg hover:shadow-slate-600 transition-shadow duration-300 " onClick={()=>goTo(data?.contact?.github)}>Github</p>
+          <p className="text-lg rounded-md text-[#0077B5] hover:cursor-pointer hover:shadow-lg hover:shadow-slate-600 transition-shadow duration-300" onClick={()=>goTo(data?.contact?.linkedin)}>Linkedin</p>
         </div>
       </div>
       </div>
@@ -35,8 +38,8 @@ export default function Footer() {
         <p className="text-xl border-b-2 mr-4  border-[#AF0C48] text-[#AF0C48] inline-block w-[280px]  md:mr-0"><FontAwesomeIcon icon={faHandPointUp} rotation={90} style={{color: "#FFD43B",}} /> {data?.mail}</p>
         <div className="flex gap-4 mr-6 md:mr-0">
           <p className="text-lg">{data?.title?.personelBlog}</p>
-          <p className="text-lg text-[#00AB6B]">Github</p>
-          <p className="text-lg text-[#0077B5]">Linkedin</p>
+          <p className="text-lg rounded-md text-[#00AB6B] hover:cursor-pointer hover:shadow-lg hover:shadow-slate-600 transition-shadow duration-300" onClick={()=>goTo(data?.contact?.github)}>Github</p>
+          <p className="text-lg rounded-md text-[#0077B5] hover:cursor-pointer hover:shadow-lg hover:shadow-slate-600 transition-shadow duration-300"  onClick={()=>goTo(data?.contact?.linkedin)}>Linkedin</p>
         </div>
       </div>
       </div>
