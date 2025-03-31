@@ -31,7 +31,7 @@ export default function Skills() {
               itemCountPerPanel={itemsPerPanel}
               customMode
               carouselId={"carousel2"}
-              key={getData()}//keyden dolayı render olmuyodu çözüldü.
+              key={getData()||itemsPerPanel}//keyden dolayı render olmuyodu çözüldü.
               
             >
               {data?.skills?.map((item, index) => (

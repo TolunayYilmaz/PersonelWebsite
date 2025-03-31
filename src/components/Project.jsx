@@ -7,7 +7,7 @@ export default function Project({projectName,projectDescription,src}){
   const {theme} =useContext(ThemeContext);
 
     return(
-    <div className="w-[300px] h-[550px] rounded overflow-hidden ml-5 mr-32">
+    <div className="w-[300px] h-[450px] sm:h-[550px] rounded overflow-hidden ml-5 mr-32">
 <img className="w-full h-44 object-fill" src={src} alt="Sunset in the mountains" />
       
       {theme==="dark"?(<>
