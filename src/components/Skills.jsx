@@ -20,7 +20,7 @@ export default function Skills() {
             theme === "dark" ? "text-[#AEBCCF]" : "text-black"
           }`}
         >
-          Skills
+         {data?.title?.skills}
         </h1>
 
         {isPending ? (

@@ -1,10 +1,11 @@
 import Button from "./Button.jsx";
 import {useContext} from "react"
 import { ThemeContext } from "../contexts/ThemeContext.jsx";
-
-
+import {LanguageContext} from "../contexts/LanguageContext"
+import { useProfile } from "../services/queries";
 export default function TopBar() {
-
+  const { getData } = useContext(LanguageContext);
+   const { data } =useProfile(getData());
 
 
   const {theme}=useContext(ThemeContext)
@@ -18,11 +19,11 @@ export default function TopBar() {
       <div
         className="flex flex-col justify-between  md:flex-row gap-2"
       >
-        <Button textColor={"#6B7280"} buttonName={"Skills"} location={"skills"}/>
-        <Button textColor={"#6B7280"} buttonName={"Projects"} location={"projects"} />
+        <Button textColor={"#6B7280"} buttonName={data?.title?.skills} location={"skills"}/>
+        <Button textColor={"#6B7280"} buttonName={data?.title?.projects} location={"projects"} />
         <Button
           textColor={"#3730A3"}
-          buttonName={"Hire Me"}
+          buttonName={data?.title?.hire}
           borderColor={"#3730A3"}
           bgColor={"white"}
           location={"profile"}

@@ -19,43 +19,43 @@ export default function Profile() {
        
             {" "}
             <h1 className="text-3xl md:text-5xl font-semibold text-[#AEBCCF]">
-              Profile
+              {data?.title?.profile}
             </h1>
             <div className="flex flex-col md:flex-row gap-14">
               <div className="w-full md:w-2/5">
                 <h2 className="text-2xl md:text-3xl text-[#B7AAFF] mb-5 mt-6">
-                  Profile
+                {data?.title?.profile}
                 </h2>
                 <div className="flex">
                   <div className="w-40 flex flex-col gap-2">
                     <p className="md:text-lg font-semibold text-[#FFFFFF]">
-                      Doğum Tarihi
+                    {data?.title?.dateOfBirth}
                     </p>
                     <p className="md:text-lg font-semibold text-[#FFFFFF]">
-                      İkamet Şehri
+                    {data?.title?.residenceCity}
                     </p>
                     <p className="md:text-lg font-semibold text-[#FFFFFF]">
-                      Eğitim Durumu
+                    {data?.title?.education}
                     </p>
                     <p className="md:text-lg font-semibold mt-5 text-[#FFFFFF]">
-                      Tercih Ettiği Rol
+                    {data?.title?.preferredRoles}
                     </p>
                   </div>
                   <div className="w-56 gap-[7px] flex flex-col md:gap-3">
-                    <p className="font-normal text-[#FFFFFF]">10.05.1998</p>
-                    <p className="font-normal text-[#FFFFFF]">İstanbul</p>
+                    <p className="font-normal text-[#FFFFFF]">{data?.dateOfBirth}</p>
+                    <p className="font-normal text-[#FFFFFF]">{data?.residenceCity}</p>
                     <p className="font-normal text-[#FFFFFF]">
-                      Tekirdağ Namı Kemal Ünv. Endüstri Müh., 2021
+                    {data?.education}
                     </p>
                     <p className="font-normal text-[#FFFFFF]">
-                      Frontend, Backend ve Fullstack
+                     {data?.preferredRoles}
                     </p>
                   </div>
                 </div>
               </div>
               <div className="w-full md:w-3/5">
                 <h2 className="text-2xl md:text-3xl text-[#B7AAFF] mb-5 mt-6">
-                  About Me
+                {data?.title?.aboutMe}
                 </h2>
                 <div className="flex flex-col gap-4">
                   <p className="text-sm md:text-lg text-[#FFFFFF] font-normal">
@@ -68,36 +68,36 @@ export default function Profile() {
         </>
       ) : (
         <>
-          <h1 className="text-3xl md:text-5xl font-semibold">Profile</h1>
+          <h1 className="text-3xl md:text-5xl font-semibold">   {data?.title?.profile}</h1>
           <div className="flex flex-col md:flex-row gap-14">
             <div className="w-full  md:w-2/5">
               <h2 className="text-2xl md:text-3xl text-[#4338CA] mb-5 mt-6">
-                Profile
+              {data?.title?.profile}
               </h2>
               <div className="flex ">
                 <div className="w-40 flex flex-col gap-2 ">
-                  <p className="md:text-lg font-semibold">Doğum Tarihi</p>
-                  <p className="md:text-lg font-semibold">İkamet Şehri</p>
-                  <p className="md:text-lg font-semibold">Eğitim Durumu</p>
+                  <p className="md:text-lg font-semibold">{data?.title?.dateOfBirth}</p>
+                  <p className="md:text-lg font-semibold">  {data?.title?.residenceCity}</p>
+                  <p className="md:text-lg font-semibold"> {data?.title?.education}</p>
                   <p className="md:text-lg font-semibold mt-5">
-                    Tercih Ettiği Rol
+                   {data?.title?.preferredRoles}
                   </p>
                 </div>
                 <div className="w-56 gap-[7px] flex flex-col md:gap-3">
-                  <p className="font-normal">10.05.1998</p>
-                  <p className="font-normal">İstanbul</p>
+                  <p className="font-normal">{data?.dateOfBirth}</p>
+                  <p className="font-normal">{data?.residenceCity}</p>
                   <p className="font-normal ">
-                    Tekirdağ Namı Kemal Ünv. Endüstri Müh., 2021
+                  {data?.education}
                   </p>
                   <p className="font-normal">
-                    Frontend , Backend and Fullstack
+                  {data?.preferredRoles}
                   </p>
                 </div>
               </div>
             </div>
             <div className="w-full md:w-3/5">
               <h2 className="text-2xl md:text-3xl text-[#4338CA] mb-5 mt-6">
-                About Me
+              {data?.title?.aboutMe}
               </h2>
               <div className="flex flex-col gap-4">
                 <p className="text-sm md:text-lg text-[#6B7280] font-normal">

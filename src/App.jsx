@@ -10,8 +10,10 @@ import ProjectList from "./components/ProjectList";
 import Footer from "./components/Footer";
 import { Element } from "react-scroll";
 
+
 function App() {
   const { theme } = useContext(ThemeContext);
+
 
   return (
     <div

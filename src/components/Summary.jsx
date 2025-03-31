@@ -6,10 +6,15 @@ import { ThemeContext } from "../contexts/ThemeContext.jsx";
 import {LanguageContext} from "../contexts/LanguageContext"
 import { useProfile } from "../services/queries";
 
+
 export default function Summary() {
   const { theme } = useContext(ThemeContext);
   const { getData } = useContext(LanguageContext);
    const { data } =useProfile(getData());
+
+   const goTo = (value) => {
+    window.location.href = value;
+  };
   
   return (
     <>
@@ -37,7 +42,7 @@ export default function Summary() {
               theme === "dark" ? "text-[#AEBCCF]" : "text-black"
             } leading-tight  `}
           >
-            Creative thinker, Minimalism lover
+            {data?.title?.summaryHead}
           </h1>
 
           <p
@@ -51,7 +56,7 @@ export default function Summary() {
           <div className="flex flex-wrap gap-2 md:gap-3">
             <Button
               textColor={theme === "dark" ? "black" : "white"}
-              buttonName={"Hire Me"}
+              buttonName={data?.title?.hire}
               bgColor={theme === "dark" ? "#E1E1FF" : "#3730A3"}
               borderColor={"#3730A3"}
               location={"profile"}
@@ -59,16 +64,21 @@ export default function Summary() {
             <Button
               borderColor={theme === "dark" ? "#BAB2E7" : "#3730A3"}
               textColor={theme === "dark" ? "#BAB2E7" : "#3730A3"}
-              buttonName={"Github"}
+              buttonName={data?.title?.github}
               iconName={faGithub}
               bgColor={theme === "dark" ? "#383838" : "white"}
+              goSite={()=>goTo(data?.contact?.github)}
+              
+            
+            
             />
             <Button
               borderColor={theme === "dark" ? "#BAB2E7" : "#3730A3"}
               textColor={theme === "dark" ? "#BAB2E7" : "#3730A3"}
-              buttonName={"Linkedin"}
+              buttonName={data?.title?.linkedIn}
               iconName={faLinkedinIn}
               bgColor={theme === "dark" ? "#383838" : "white"}
+              goSite={()=>goTo(data?.contact?.linkedin)}
             />
           </div>
         </div>

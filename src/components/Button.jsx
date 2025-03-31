@@ -7,7 +7,9 @@ export default function Button({
   bgColor,
   textColor,
   borderColor,
-  location
+  location,
+  goSite
+
 
 }) {
   return (
@@ -18,6 +20,7 @@ export default function Button({
         borderColor ? `border-[1px] border-[${borderColor}]` : ""
       }`}
       style={{ backgroundColor: bgColor, color: textColor }}
+      onClick={goSite}
     
     >
       {iconName && (

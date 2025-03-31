@@ -19,7 +19,7 @@ export default function ProjectList() {
           theme === "dark" ? "text-[#AEBCCF]" : "text-black"
         }`}
       >
-        Projects
+       {data?.title?.projects}
       </h1>
 
       {isPending ? (
@@ -42,6 +42,7 @@ export default function ProjectList() {
                 projectName={item.name}
                 projectDescription={item.description}
                 src={`${index}.png`}
+                techs={item.tech}
               
               ></Project>
             ))}

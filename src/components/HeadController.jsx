@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { LanguageContext } from "../contexts/LanguageContext";
+import { useProfile } from "../services/queries";
 
 export default function HeadController() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { language, toggleLanguage } = useContext(LanguageContext);
+  const { getData } = useContext(LanguageContext);
+  const { data, isPending } = useProfile(getData());
 
   const isDarkMode = theme === "dark";
   const isLang = language === "tr";
 
   return (
-    <div className="w-fit mt-10  sm:w-7/12 mx-auto mt-3 flex gap-3 justify-end">
+    <div className="w-fit mt-10  sm:w-7/12 mx-auto sm:mt-3 flex gap-3 justify-end">
       <label className="flex cursor-pointer select-none items-center">
         <div className="relative">
           <input
@@ -51,14 +54,23 @@ export default function HeadController() {
       </label>
 
       <div className="text-[15px] font-bold text-[#777777]">
-        {isDarkMode ? "DARK" : "LIGHT"} MODE |{" "}
-        <span
-          onClick={toggleLanguage}
-          className="text-[#3730A3] hover:cursor-pointer hover:shadow-md hover:shadow-gray"
-        >
-          {isLang ? "ENGLISH" : "TÜRKÇE"}
-        </span>
-        'YE GEÇ
+        {isDarkMode ? data?.darkMode : data?.lightMode}  |{" "}
+     {
+      isLang?(<> {data?.languageClause+" "}<span
+        onClick={toggleLanguage}
+        className="text-[#3730A3] hover:cursor-pointer hover:shadow-md hover:shadow-gray"
+      >
+        {data?.language}
+      </span>
+     </>):(<> <span
+        onClick={toggleLanguage}
+        className="text-[#3730A3] hover:cursor-pointer hover:shadow-md hover:shadow-gray"
+      >
+        {data?.language}
+      </span>
+      {" "+data?.languageClause}</>)
+     }
+       
       </div>
     </div>
   );
