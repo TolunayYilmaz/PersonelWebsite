@@ -5,17 +5,13 @@ import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext.jsx";
 import {LanguageContext} from "../contexts/LanguageContext"
 import { useProfile } from "../services/queries";
-
+import { useGoSite } from "../hooks/useGoSite.jsx";
 
 export default function Summary() {
   const { theme } = useContext(ThemeContext);
   const { getData } = useContext(LanguageContext);
    const { data } =useProfile(getData());
-
-   const goTo = (value) => {
-    window.location.href = value;
-  };
-  
+  const goTo=useGoSite();
   return (
     <>
      <div className="flex items-center  h-0 m-0 p-0 lg:mx-auto lg:w-7/12 ">

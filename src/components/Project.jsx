@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { useGoSite } from "../hooks/useGoSite";
 
 export default function Project({
   projectName,
@@ -10,10 +11,7 @@ export default function Project({
   gitHubLink
 }) {
   const { theme } = useContext(ThemeContext);
-  const goTo = (value) => {
-    window.location.href = value;
-  };
-  
+ const goTo=useGoSite();
 
   return (
     <div className="w-[300px] h-[450px] sm:h-[460px] rounded overflow-hidden ml-5 mr-32 flex flex-col justify-between">

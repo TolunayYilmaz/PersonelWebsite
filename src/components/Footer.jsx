@@ -4,14 +4,14 @@ import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { LanguageContext } from "../contexts/LanguageContext";
 import { useProfile } from "../services/queries";
+import { useGoSite } from "../hooks/useGoSite";
 
 export default function Footer() {
   const {theme}=useContext(ThemeContext);
     const { getData } = useContext(LanguageContext);
     const { data, isPending } = useProfile(getData());
-    const goTo = (value) => {
-      window.location.href = value;
-    };
+    const goTo=useGoSite();
+   
   return (
 <>
 {theme==="dark"?(<>
