@@ -18,7 +18,7 @@ export default function Summary() {
   
   return (
     <>
-     <div className="flex items-center  h-0 m-0 p-0 md:mx-auto md:w-7/12 ">
+     <div className="flex items-center  h-0 m-0 p-0 lg:mx-auto lg:w-7/12 ">
             <div
               className={`border-b-[1px] w-[102px] border-solid ${
                 theme === "dark" ? "border-[#BAB2E7]" : "border-[#3730A3]"
@@ -32,13 +32,13 @@ export default function Summary() {
               {data?.name}
             </p>
       </div>
-      <div className="w-[75%] flex flex-col-reverse gap-5  md:gap-0 md:w-[65%] md:h-auto mx-auto  md:flex-row md:items-center md:justify-between md:px-4 ">
+      <div className="w-[75%] flex flex-col-reverse gap-5  xl:gap-0 lg:w-[65%] lg:h-auto mx-auto  lg:flex-row lg:items-center lg:justify-between lg:px-4 ">
      
-        <div className="flex flex-col justify-between gap-5 w-full md:gap-16 md:w-1/2 md:m-12  ">
+        <div className="flex flex-col justify-between gap-5 w-full xl:gap-16 xl:w-1/2 xl:m-12  ">
       
 
           <h1
-            className={`text-3xl md:w-[600px] md:text-7xl font-bold ${
+            className={`text-3xl lg:text-5xl xl:w-[672px] xl:text-7xl font-bold ${
               theme === "dark" ? "text-[#AEBCCF]" : "text-black"
             } leading-tight  `}
           >
@@ -46,14 +46,14 @@ export default function Summary() {
           </h1>
 
           <p
-            className={`text-sm md:text-lg  ${
+            className={`text-sm  lg:text-base xl:text-lg xl:leading-7  ${
               theme === "dark" ? "text-white" : "text-[#6B7280]"
-            } md:w-[553px] md:h-auto`}
+            } xl:w-[553px] xl:h-auto`}
           >
             {data?.about}
           </p>
 
-          <div className="flex flex-wrap gap-2 md:gap-3">
+          <div className="flex flex-wrap gap-2 xl:gap-3">
             <Button
               textColor={theme === "dark" ? "black" : "white"}
               buttonName={data?.title?.hire}
@@ -84,7 +84,7 @@ export default function Summary() {
         </div>
 
         <img
-          className="w-[250px] h-[250px] md:w-[375px] md:mr-40 md:h-[375px] object-cover md:mt-4 rounded-xl"
+          className="w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] xl:w-[375px] xl:mr-40 xl:h-[375px] object-cover xl:mt-4 rounded-xl"
           src={photo}
         />
       </div>

@@ -12,7 +12,7 @@ export default function Profile() {
   return (
     <div
      
-      className="w-[80%]  border-t border-b border-[#BAB2E7] py-6 md:w-7/12 mx-auto "
+      className="w-[80%] border-t border-b border-[#BAB2E7] py-16 md:w-7/12 mx-auto "
     >
       {theme === "dark" ? (
         <>
@@ -34,20 +34,20 @@ export default function Profile() {
                     <p className="md:text-lg font-semibold text-[#FFFFFF]">
                     {data?.title?.residenceCity}
                     </p>
-                    <p className="md:text-lg font-semibold text-[#FFFFFF]">
+                    <p className="md:text-lg font-semibold text-[#FFFFFF] md:mt-3" >
                     {data?.title?.education}
                     </p>
-                    <p className=" mt-20 md:text-lg font-semibold md:mt-5 text-[#FFFFFF]">
+                    <p className=" mt-24 md:text-lg font-semibold  md:mt-14 text-[#FFFFFF]">
                     {data?.title?.preferredRoles}
                     </p>
                   </div>
                   <div className="w-56 gap-[7px] flex flex-col md:gap-3">
-                    <p className="font-normal text-[#FFFFFF]">{data?.dateOfBirth}</p>
-                    <p className="font-normal text-[#FFFFFF]">{data?.residenceCity}</p>
-                    <p className="mt-1 font-normal text-[#FFFFFF]">
+                    <p className="font-normal text-[#FFFFFF] xl:text-lg">{data?.dateOfBirth}</p>
+                    <p className="font-normal text-[#FFFFFF] xl:text-lg">{data?.residenceCity}</p>
+                    <p className="mt-1 font-normal text-[#FFFFFF] md:mt-0 xl:text-lg">
                     {data?.education}
                     </p>
-                    <p className="mt-1 font-normal text-[#FFFFFF]">
+                    <p className="mt-1 font-normal text-[#FFFFFF] md:mt-0 xl:text-lg">
                      {data?.preferredRoles}
                     </p>
                   </div>
@@ -79,23 +79,23 @@ export default function Profile() {
                     <p className="md:text-lg font-semibold ">
                     {data?.title?.dateOfBirth}
                     </p>
-                    <p className="md:text-lg font-semibold t">
+                    <p className="md:text-lg font-semibold ">
                     {data?.title?.residenceCity}
                     </p>
-                    <p className="md:text-lg font-semibold ">
+                    <p className="md:text-lg font-semibold md:mt-3 ">
                     {data?.title?.education}
                     </p>
-                    <p className=" mt-20 md:text-lg font-semibold md:mt-5 ">
+                    <p className=" mt-20 md:text-lg font-semibold md:mt-14 ">
                     {data?.title?.preferredRoles}
                     </p>
                   </div>
                   <div className="w-56 gap-[7px] flex flex-col md:gap-3">
-                    <p className="font-normal ">{data?.dateOfBirth}</p>
-                    <p className="font-normal ">{data?.residenceCity}</p>
-                    <p className="mt-1 font-normal ">
+                    <p className="font-normal xl:text-lg ">{data?.dateOfBirth}</p>
+                    <p className="font-normal xl:text-lg">{data?.residenceCity}</p>
+                    <p className="mt-1 font-normal sm:mt-0 xl:text-lg">
                     {data?.education}
                     </p>
-                    <p className="mt-1 font-normal ">
+                    <p className="mt-1 font-normal sm:mt-0 xl:text-lg">
                      {data?.preferredRoles}
                     </p>
                   </div>

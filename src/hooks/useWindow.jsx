@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 export const useWindow = () => {
   const getItemsPerPanel = () => {
-    if (window.innerWidth <= 640) {
+    if (window.innerWidth <= 1000) {
       return 1;
-    } else if (window.innerWidth <= 1024) {
+    } else if (window.innerWidth <= 1600) {
       return 2;
     } else {
       return 3;
