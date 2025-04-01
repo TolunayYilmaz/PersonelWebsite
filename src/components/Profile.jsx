@@ -26,8 +26,8 @@ export default function Profile() {
                 <h2 className="text-2xl md:text-3xl text-[#B7AAFF] mb-5 mt-6">
                 {data?.title?.profile}
                 </h2>
-                <div className="flex">
-                  <div className="w-40 flex flex-col gap-2">
+                <div className="flex gap-6 md:gap-0">
+                  <div className="w-3/5 flex flex-col gap-2">
                     <p className="md:text-lg font-semibold text-[#FFFFFF]">
                     {data?.title?.dateOfBirth}
                     </p>
@@ -37,17 +37,17 @@ export default function Profile() {
                     <p className="md:text-lg font-semibold text-[#FFFFFF]">
                     {data?.title?.education}
                     </p>
-                    <p className="md:text-lg font-semibold mt-5 text-[#FFFFFF]">
+                    <p className=" mt-20 md:text-lg font-semibold md:mt-5 text-[#FFFFFF]">
                     {data?.title?.preferredRoles}
                     </p>
                   </div>
                   <div className="w-56 gap-[7px] flex flex-col md:gap-3">
                     <p className="font-normal text-[#FFFFFF]">{data?.dateOfBirth}</p>
                     <p className="font-normal text-[#FFFFFF]">{data?.residenceCity}</p>
-                    <p className="font-normal text-[#FFFFFF]">
+                    <p className="mt-1 font-normal text-[#FFFFFF]">
                     {data?.education}
                     </p>
-                    <p className="font-normal text-[#FFFFFF]">
+                    <p className="mt-1 font-normal text-[#FFFFFF]">
                      {data?.preferredRoles}
                     </p>
                   </div>
@@ -74,26 +74,32 @@ export default function Profile() {
               <h2 className="text-2xl md:text-3xl text-[#4338CA] mb-5 mt-6">
               {data?.title?.profile}
               </h2>
-              <div className="flex ">
-                <div className="w-40 flex flex-col gap-2 ">
-                  <p className="md:text-lg font-semibold">{data?.title?.dateOfBirth}</p>
-                  <p className="md:text-lg font-semibold">  {data?.title?.residenceCity}</p>
-                  <p className="md:text-lg font-semibold"> {data?.title?.education}</p>
-                  <p className="md:text-lg font-semibold mt-5">
-                   {data?.title?.preferredRoles}
-                  </p>
+              <div className="flex gap-6 md:gap-0">
+                  <div className="w-3/5 flex flex-col gap-2">
+                    <p className="md:text-lg font-semibold ">
+                    {data?.title?.dateOfBirth}
+                    </p>
+                    <p className="md:text-lg font-semibold t">
+                    {data?.title?.residenceCity}
+                    </p>
+                    <p className="md:text-lg font-semibold ">
+                    {data?.title?.education}
+                    </p>
+                    <p className=" mt-20 md:text-lg font-semibold md:mt-5 ">
+                    {data?.title?.preferredRoles}
+                    </p>
+                  </div>
+                  <div className="w-56 gap-[7px] flex flex-col md:gap-3">
+                    <p className="font-normal ">{data?.dateOfBirth}</p>
+                    <p className="font-normal ">{data?.residenceCity}</p>
+                    <p className="mt-1 font-normal ">
+                    {data?.education}
+                    </p>
+                    <p className="mt-1 font-normal ">
+                     {data?.preferredRoles}
+                    </p>
+                  </div>
                 </div>
-                <div className="w-56 gap-[7px] flex flex-col md:gap-3">
-                  <p className="font-normal">{data?.dateOfBirth}</p>
-                  <p className="font-normal">{data?.residenceCity}</p>
-                  <p className="font-normal ">
-                  {data?.education}
-                  </p>
-                  <p className="font-normal">
-                  {data?.preferredRoles}
-                  </p>
-                </div>
-              </div>
             </div>
             <div className="w-full md:w-3/5">
               <h2 className="text-2xl md:text-3xl text-[#4338CA] mb-5 mt-6">
