@@ -29,7 +29,7 @@ function App() {
           <div className="flex justify-center items-center min-h-screen">
             <ReactLoading
               type="spin"
-              color="#4A90E2"
+              color="#7B61FF"
               height="20%"
               width="20%"
             />
