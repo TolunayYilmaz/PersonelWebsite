@@ -21,7 +21,8 @@ function App() {
         theme === "dark" ? "bg-[#252128]" : "bg-white"
       }`}
     >
-      <HeadController />
+      <HeadController/>
+      
       <TopBar />
       <Summary />
 

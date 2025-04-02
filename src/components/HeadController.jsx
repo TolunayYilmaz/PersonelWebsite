@@ -16,7 +16,8 @@ export default function HeadController() {
       return <div className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</div>
     }
   return (
-    <div className="w-fit mt-10  sm:w-7/12 mx-auto sm:mt-3 flex gap-3 justify-end">
+    <div className={`fixed w-full ${isDarkMode?"bg-[#252128]":"bg-white"} z-50`}>
+        <div className="w-fit mt-10  sm:w-7/12 mx-auto sm:mt-3 flex gap-3 justify-end">
       <label className="flex cursor-pointer select-none items-center">
         <div className="relative">
           <input
@@ -76,5 +77,7 @@ export default function HeadController() {
        
       </div>
     </div>
+    </div>
+  
   );
 }
