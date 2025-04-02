@@ -9,11 +9,14 @@ import Profile from "./components/Profile";
 import ProjectList from "./components/ProjectList";
 import Footer from "./components/Footer";
 import { Element } from "react-scroll";
-
+import { LanguageContext } from "./contexts/LanguageContext";
+import { useProfile } from "./services/queries";
+import ReactLoading from "react-loading";
 
 function App() {
   const { theme } = useContext(ThemeContext);
-
+  const { getData } = useContext(LanguageContext);
+  const { isPending } = useProfile(getData());
 
   return (
     <div
@@ -21,23 +24,34 @@ function App() {
         theme === "dark" ? "bg-[#252128]" : "bg-white"
       }`}
     >
-      <HeadController/>
-      
-      <TopBar />
-      <Summary />
-
-      <Element name="skills">
-        <Skills />
-      </Element>
-
-      <Element name="profile">
-        <Profile />
-      </Element>
-      <Element name="projects">
-        <ProjectList />
-      </Element>
-
-      <Footer />
+      {isPending ? (
+        <>
+          <div className="flex justify-center items-center min-h-screen">
+            <ReactLoading
+              type="spin"
+              color="#4A90E2"
+              height="20%"
+              width="20%"
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <HeadController />
+          <TopBar />
+          <Summary />
+          <Element name="skills">
+            <Skills />
+          </Element>
+          <Element name="profile">
+            <Profile />
+          </Element>
+          <Element name="projects">
+            <ProjectList />
+          </Element>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

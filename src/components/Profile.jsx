@@ -6,11 +6,7 @@ import { useProfile } from "../services/queries";
 export default function Profile() {
   const { theme } = useContext(ThemeContext);
   const { getData } = useContext(LanguageContext);
-  const { data, isPending } = useProfile(getData());
-
-  if (isPending) {
-    return <div className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</div>;
-  }
+  const { data } = useProfile(getData());
 
   return (
     <div className="w-[80%] border-t border-b border-[#BAB2E7] py-16 md:w-7/12 mx-auto">
@@ -40,8 +36,12 @@ export default function Profile() {
                   </p>
                 </div>
                 <div className="w-56 gap-[7px] flex flex-col md:gap-3">
-                  <p className="font-normal text-[#FFFFFF] xl:text-lg">{data?.dateOfBirth}</p>
-                  <p className="font-normal text-[#FFFFFF] xl:text-lg">{data?.residenceCity}</p>
+                  <p className="font-normal text-[#FFFFFF] xl:text-lg">
+                    {data?.dateOfBirth}
+                  </p>
+                  <p className="font-normal text-[#FFFFFF] xl:text-lg">
+                    {data?.residenceCity}
+                  </p>
                   <p className="mt-1 font-normal text-[#FFFFFF] md:mt-0 xl:text-lg">
                     {data?.education}
                   </p>
@@ -65,7 +65,9 @@ export default function Profile() {
         </>
       ) : (
         <>
-          <h1 className="text-3xl md:text-5xl font-semibold">{data?.title?.profile}</h1>
+          <h1 className="text-3xl md:text-5xl font-semibold">
+            {data?.title?.profile}
+          </h1>
           <div className="flex flex-col md:flex-row gap-14">
             <div className="w-full md:w-2/5">
               <h2 className="text-2xl md:text-3xl text-[#4338CA] mb-5 mt-6">
@@ -88,7 +90,9 @@ export default function Profile() {
                 </div>
                 <div className="w-56 gap-[7px] flex flex-col md:gap-3">
                   <p className="font-normal xl:text-lg">{data?.dateOfBirth}</p>
-                  <p className="font-normal xl:text-lg">{data?.residenceCity}</p>
+                  <p className="font-normal xl:text-lg">
+                    {data?.residenceCity}
+                  </p>
                   <p className="mt-1 font-normal md:mt-0 xl:text-lg">
                     {data?.education}
                   </p>

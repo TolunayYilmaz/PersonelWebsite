@@ -7,14 +7,11 @@ export default function HeadController() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { language, toggleLanguage } = useContext(LanguageContext);
   const { getData } = useContext(LanguageContext);
-  const { data, isPending } = useProfile(getData());
+  const { data } = useProfile(getData());
 
   const isDarkMode = theme === "dark";
   const isLang = language === "tr";
-  if(isPending)
-    {
-      return <div className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</div>
-    }
+
   return (
     <div className={`fixed w-full ${isDarkMode?"bg-[#252128]":"bg-white"} z-50`}>
         <div className="w-fit mt-10  sm:w-7/12 mx-auto sm:mt-3 flex gap-3 justify-end">

@@ -10,7 +10,7 @@ export default function Skills() {
   const { theme } = useContext(ThemeContext);
   const { itemsPerPanel } = useWindow();
   const { getData } = useContext(LanguageContext);
-  const { data, isPending } = useProfile(getData());
+  const { data } = useProfile(getData());
 
   return (
     <div className="flex justify-center sm:mx-auto">
@@ -20,53 +20,44 @@ export default function Skills() {
             theme === "dark" ? "text-[#AEBCCF]" : "text-black"
           }`}
         >
-         {data?.title?.skills}
+          {data?.title?.skills}
         </h1>
 
-        {isPending ? (
+        <Carousel
+          itemCountPerPanel={itemsPerPanel}
+          customMode
+          carouselId={"carousel2"}
+          key={getData()}
+        >
+          {data?.skills?.map((item, index) => (
+            <ItemSkill
+              skillHead={item.name}
+              skill={item.description}
+              key={index}
+            />
+          ))}
+        </Carousel>
 
-         <h2 className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</h2>
-        
-        ) : (
-          <>
-         
-           <Carousel
-              itemCountPerPanel={itemsPerPanel}
-              customMode
-              carouselId={"carousel2"}
-              key={getData()}
-            
-              
-            >
-              {data?.skills?.map((item, index) => (
-                <ItemSkill
-                  skillHead={item.name}
-                  skill={item.description}
-                  key={index}
-                  
-                />
-              ))}
-            </Carousel>
-
-       
-            <div className="flex mr-24 md: justify-center mt-5 gap-4">
-              <div
-                className={`rounded-md hover:cursor-pointer ${
-                  theme === "dark" ? "text-white hover:shadow-slate-300" : "text-black"
-                } hover:shadow-md`}
-              >
-                <Controller prev carouselId={"carousel2"} />
-              </div>
-              <div
-                className={`rounded-md hover:cursor-pointer ${
-                  theme === "dark" ? "text-white hover:shadow-slate-300" : "text-black"
-                } hover:shadow-md`}
-              >
-                <Controller next carouselId={"carousel2"} />
-              </div>
-            </div>
-          </>
-        )}
+        <div className="flex mr-24 md: justify-center mt-5 gap-4">
+          <div
+            className={`rounded-md hover:cursor-pointer ${
+              theme === "dark"
+                ? "text-white hover:shadow-slate-300"
+                : "text-black"
+            } hover:shadow-md`}
+          >
+            <Controller prev carouselId={"carousel2"} />
+          </div>
+          <div
+            className={`rounded-md hover:cursor-pointer ${
+              theme === "dark"
+                ? "text-white hover:shadow-slate-300"
+                : "text-black"
+            } hover:shadow-md`}
+          >
+            <Controller next carouselId={"carousel2"} />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -9,13 +9,10 @@ import { useGoSite } from "../hooks/useGoSite";
 export default function Footer() {
   const { theme } = useContext(ThemeContext);
   const { getData } = useContext(LanguageContext);
-  const { data, isPending } = useProfile(getData());
+  const { data } = useProfile(getData());
   const goTo = useGoSite();
 
-  if(isPending)
-    {
-      return <div className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</div>
-    }
+
   return (
     <>
       {theme === "dark" ? (
