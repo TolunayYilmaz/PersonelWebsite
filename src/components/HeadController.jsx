@@ -11,7 +11,10 @@ export default function HeadController() {
 
   const isDarkMode = theme === "dark";
   const isLang = language === "tr";
-
+  if(isPending)
+    {
+      return <div className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</div>
+    }
   return (
     <div className="w-fit mt-10  sm:w-7/12 mx-auto sm:mt-3 flex gap-3 justify-end">
       <label className="flex cursor-pointer select-none items-center">

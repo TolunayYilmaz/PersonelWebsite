@@ -13,8 +13,8 @@ export default function Skills() {
   const { data, isPending } = useProfile(getData());
 
   return (
-    <div className="flex justify-center md:mx-auto">
-      <div className="w-full  ml-20 md:w-[62%]  md:mt-24" key={itemsPerPanel}>
+    <div className="flex justify-center sm:mx-auto">
+      <div className="w-full  ml-20 sm:w-[62%]  md:mt-24" key={itemsPerPanel}>
         <h1
           className={`text-3xl  mb-5 md:text-5xl md:mb-10 ml-2 ${
             theme === "dark" ? "text-[#AEBCCF]" : "text-black"
@@ -24,7 +24,9 @@ export default function Skills() {
         </h1>
 
         {isPending ? (
-          <p>Yükleniyor:</p>
+
+         <h2 className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</h2>
+        
         ) : (
           <>
          

@@ -9,6 +9,11 @@ export default function Profile() {
   const { theme } = useContext(ThemeContext);
   const { getData } = useContext(LanguageContext);
   const { data, isPending } = useProfile(getData());
+
+  if(isPending)
+    {
+      return <div className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</div>
+    }
   return (
     <div
      

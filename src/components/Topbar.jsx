@@ -5,10 +5,12 @@ import {LanguageContext} from "../contexts/LanguageContext"
 import { useProfile } from "../services/queries";
 export default function TopBar() {
   const { getData } = useContext(LanguageContext);
-   const { data } =useProfile(getData());
-
-
+   const { data,isPending } =useProfile(getData());
   const {theme}=useContext(ThemeContext)
+  if(isPending)
+    {
+      return <div className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</div>
+    }
   return (
     <div className="w-7/12 mx-auto  flex gap-3  justify-between items-center">
       <div className={`w-[62px] h-[62px] border-2 border-none  rounded-full flex items-center justify-center ${theme==="dark"?"bg-[#EEEBFF]":"bg-[#7B61FF]"}`}>

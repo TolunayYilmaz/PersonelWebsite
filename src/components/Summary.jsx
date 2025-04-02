@@ -10,11 +10,15 @@ import { useGoSite } from "../hooks/useGoSite.jsx";
 export default function Summary() {
   const { theme } = useContext(ThemeContext);
   const { getData } = useContext(LanguageContext);
-   const { data } =useProfile(getData());
+   const { data,isPending } =useProfile(getData());
   const goTo=useGoSite();
+  if(isPending)
+    {
+      return <div className="flex justify-center text-4xl font-medium text-red-500">Yükleniyor...</div>
+    }
   return (
     <>
-     <div className="flex items-center  h-0 m-0 p-0 lg:mx-auto lg:w-7/12 ">
+     <div className="flex items-center   h-0 m-0 p-0 sm:mx-auto sm:w-7/12 ">
             <div
               className={`border-b-[1px] w-[102px] border-solid ${
                 theme === "dark" ? "border-[#BAB2E7]" : "border-[#3730A3]"
@@ -28,13 +32,13 @@ export default function Summary() {
               {data?.name}
             </p>
       </div>
-      <div className="w-[75%] flex flex-col-reverse gap-5  xl:gap-0 lg:w-[65%] lg:h-auto mx-auto  lg:flex-row lg:items-center lg:justify-between lg:px-4 ">
+      <div className="w-[75%] flex flex-col-reverse gap-5  sm:w-7/12 sm:flex-row xl:gap-0  lg:h-auto mx-auto   sm:items-center sm:justify-between">
      
-        <div className="flex flex-col justify-between gap-5 w-full xl:gap-16 xl:w-1/2 xl:m-12  ">
+        <div className=" flex flex-col justify-between gap-5 w-full sm:gap-16 sm:w-1/2 sm:my-12  ">
       
 
           <h1
-            className={`text-3xl lg:text-5xl xl:w-[672px] xl:text-7xl font-bold ${
+            className={`text-3xl lg:text-4xl xl:text-5xl xl:w-[400px] 2xl:text-6xl 2xl:w-[500px] 3xl:w-[672px] 3xl:text-7xl font-bold ${
               theme === "dark" ? "text-[#AEBCCF]" : "text-black"
             } leading-tight  `}
           >
@@ -42,9 +46,9 @@ export default function Summary() {
           </h1>
 
           <p
-            className={`text-sm  lg:text-base xl:text-lg xl:leading-7  ${
+            className={`text-sm  lg:text-base xl:w-[450px] 2xl:w-[530px] xl:h-auto 3xl:text-lg 3xl:leading-7  ${
               theme === "dark" ? "text-white" : "text-[#6B7280]"
-            } xl:w-[553px] xl:h-auto`}
+            }`}
           >
             {data?.about}
           </p>
@@ -80,7 +84,7 @@ export default function Summary() {
         </div>
 
         <img
-          className="w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] xl:w-[375px] xl:mr-40 xl:h-[375px] object-cover xl:mt-4 rounded-xl"
+          className="w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] 2xl:w-[375px]  2xl:h-[375px] object-cover xl:mt-4 rounded-xl"
           src={photo}
         />
       </div>
