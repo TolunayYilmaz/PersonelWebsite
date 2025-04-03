@@ -75,7 +75,7 @@ export default function Summary() {
         </div>
 
         <img
-          className="w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] 2xl:w-[375px]  2xl:h-[375px] object-cover xl:mt-4 rounded-xl"
+          className="w-[250px] h-[250px] ml-4 sm:ml-0 lg:w-[300px] lg:h-[300px] 2xl:w-[375px]  2xl:h-[375px] object-cover xl:mt-4 rounded-xl"
           src={photo}
         />
       </div>

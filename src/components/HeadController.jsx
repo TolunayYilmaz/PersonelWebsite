@@ -13,7 +13,7 @@ export default function HeadController() {
   const isLang = language === "tr";
 
   return (
-    <div className={`fixed w-full ${isDarkMode?"bg-[#252128]":"bg-white"} z-50`}>
+    <div className={`fixed pb-4 w-full ${isDarkMode?"bg-[#252128]":"bg-white"} z-50`}>
         <div className="w-fit mt-10  sm:w-7/12 mx-auto sm:mt-3 flex gap-3 justify-end">
       <label className="flex cursor-pointer select-none items-center">
         <div className="relative">
